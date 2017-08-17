@@ -1,0 +1,11 @@
+# Redirect incoming URLs to index.php
+# fichier permet de configurer le serveur web Apache 
+# pour rediriger toutes les requêtes entrantes vers index.php.
+
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
